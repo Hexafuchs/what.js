@@ -43,7 +43,6 @@ console.log(isNull(null));
 ## Testing
 
 ```bash
-# All
 npm run test
 ```
 
