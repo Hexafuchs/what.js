@@ -1,11 +1,11 @@
 {
-  "name": ":package_name",
+  "name": "what.js",
   "version": "0.0.1",
-  "homepage": "https://github.com/Hexafuchs/:package_name",
+  "homepage": "https://github.com/Hexafuchs/what.js",
   "contributors": [
     {
-      "name": ":author_name",
-      "email": "author@domain.com"
+      "name": "Leo",
+      "email": "leo@hexafuchs.de"
     }
   ],
   "keywords": [
@@ -13,15 +13,16 @@
     "typescript"
   ],
   "bugs": {
-    "url": "https://github.com/Hexafuchs/:package_name/issues"
+    "url": "https://github.com/Hexafuchs/what.js/issues"
   },
   "license": "MIT",
-  "main": "./dist/:package_slug.cjs",
-  "module": "./dist/:package_slug.mjs",
+  "type": "module",
+  "main": "./dist/what.cjs",
+  "module": "./dist/what.mjs",
   "exports": {
     ".": {
-      "require": "./dist/:package_slug.cjs",
-      "import": "./dist/:package_slug.mjs"
+      "require": "./dist/what.cjs",
+      "import": "./dist/what.mjs"
     },
     "./dist/": {
       "import": "./dist/",
