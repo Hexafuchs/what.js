@@ -20,8 +20,28 @@ npm install @hexafuchs/what.js
 ## Usage
 
 ```typescript
-import { sum } from "@hexafuchs/what.js";
+import { isNull } from "@hexafuchs/what.js";
+
+console.log(isNull(null));
 ```
+
+### Functions
+
+| Name                                 | Description                                                                                              |
+|--------------------------------------|----------------------------------------------------------------------------------------------------------|
+| isNull(obj)                          | Check if variable is null                                                                                | 
+| isUndefined(obj)                     | Check if variable is undefined                                                                           |
+| isNumber(obj)                        | Check if variable is a number (integer or float)                                                         |
+| isString(obj)                        | Check if variable is a string                                                                            |
+| isObject(obj, includeArrays = false) | Check if variable is an object, set seconds parameter to true to include arrays. Null is never included. |
+| isArray(obj)                         | Check if variable is an array                                                                            |
+| isBoolean(obj)                       | Check if variable is a boolean                                                                           |
+| isFunction(obj)                      | Check if variable is a function                                                                          |
+| isSet(obj)                           | Check if variable is not null nor undefined                                                              |
+| isNotSet(obj)                        | Inverted version of isSet                                                                                |
+| isEmpty(obj)                         | Check if variable is null, undefined, false. zero, an empty string, an empty array, or an empty object   |
+| isNotEmpty(obj)                      | Inverted version of isEmpty                                                                              |
+
 
 ## Testing
 
