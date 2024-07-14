@@ -26,7 +26,7 @@ console.log(isNull(null));
 ### Functions
 
 | Name                                 | Description                                                                                              |
-| ------------------------------------ | -------------------------------------------------------------------------------------------------------- |
+|--------------------------------------|----------------------------------------------------------------------------------------------------------|
 | isNull(obj)                          | Check if variable is null                                                                                |
 | isUndefined(obj)                     | Check if variable is undefined                                                                           |
 | isNumber(obj)                        | Check if variable is a number (integer or float)                                                         |
