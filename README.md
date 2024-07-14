@@ -5,8 +5,6 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/hexafuchs/what.js/fix-ts-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/hexafuchs/what.js/actions?query=workflow%3A"Fix+Typescript+code+style+issues"+branch%3Amain)
 [![Monthly Downloads](https://img.shields.io/npm/dm/%40hexafuchs%2Fwhat.js?style=flat-square)](hhttps://www.npmjs.com/package/@hexafuchs/what.js)
 
-
-
 This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
 
 ## Installation
@@ -28,8 +26,8 @@ console.log(isNull(null));
 ### Functions
 
 | Name                                 | Description                                                                                              |
-|--------------------------------------|----------------------------------------------------------------------------------------------------------|
-| isNull(obj)                          | Check if variable is null                                                                                | 
+| ------------------------------------ | -------------------------------------------------------------------------------------------------------- |
+| isNull(obj)                          | Check if variable is null                                                                                |
 | isUndefined(obj)                     | Check if variable is undefined                                                                           |
 | isNumber(obj)                        | Check if variable is a number (integer or float)                                                         |
 | isString(obj)                        | Check if variable is a string                                                                            |
@@ -41,7 +39,6 @@ console.log(isNull(null));
 | isNotSet(obj)                        | Inverted version of isSet                                                                                |
 | isEmpty(obj)                         | Check if variable is null, undefined, false. zero, an empty string, an empty array, or an empty object   |
 | isNotEmpty(obj)                      | Inverted version of isEmpty                                                                              |
-
 
 ## Testing
 
