@@ -1,50 +1,30 @@
 import { describe, expect, it } from "vitest";
-import { isString } from "../../src/types";
+import {isString} from "../../src";
+
+const tests = [
+  ["null", null, false],
+  ["undefined", undefined, false],
+  ["true", true, false],
+  ["false", false, false],
+  ["empty string", "", true],
+  ["non-empty string", "hello", true],
+  ["zero", 0, false],
+  ["positive integer", 42, false],
+  ["negative integer", -42, false],
+  ["zero float", 0.0, false],
+  ["positive float", 42.0, false],
+  ["negative float", -42.0, false],
+  ["functions", () => {}, false],
+  ["empty arrays", [], false],
+  ["non-empty arrays", [42], false],
+  ["empty objects", {}, false],
+  ["non-empty objects", {'hello': 'world'}, false],
+]
 
 describe("isString", () => {
-  it("should be negative about null", () => {
-    expect(isString(null)).toBeFalsy();
-  });
-  it("should be negative about undefined", () => {
-    expect(isString(undefined)).toBeFalsy();
-  });
-  it("should be negative about true", () => {
-    expect(isString(true)).toBeFalsy();
-  });
-  it("should be negative about false", () => {
-    expect(isString(false)).toBeFalsy();
-  });
-  it("should be positive about empty string", () => {
-    expect(isString("")).toBeTruthy();
-  });
-  it("should be positive about non-empty string", () => {
-    expect(isString("hello")).toBeTruthy();
-  });
-  it("should be negative about zero", () => {
-    expect(isString(0)).toBeFalsy();
-  });
-  it("should be negative about a positive integer", () => {
-    expect(isString(42)).toBeFalsy();
-  });
-  it("should be negative about a negative integer", () => {
-    expect(isString(-42)).toBeFalsy();
-  });
-  it("should be negative about a float", () => {
-    expect(isString(42.0)).toBeFalsy();
-  });
-  it("should be negative about functions", () => {
-    expect(isString(() => {})).toBeFalsy();
-  });
-  it("should be negative about arrays", () => {
-    expect(isString([])).toBeFalsy();
-  });
-  it("should be negative about non-empty arrays", () => {
-    expect(isString([42])).toBeFalsy();
-  });
-  it("should be negative about objects", () => {
-    expect(isString({})).toBeFalsy();
-  });
-  it("should be negative about non-empty objects", () => {
-    expect(isString({'hello': 'world'})).toBeFalsy();
-  });
+  for (const test of tests) {
+    it("should be " + (test[2] ? 'positive' : 'negative') + " about " + test[0], () => {
+      expect(isString(test[1])).toBe(test[2]);
+    });
+  }
 });
