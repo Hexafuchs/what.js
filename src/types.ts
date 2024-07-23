@@ -58,4 +58,3 @@ export const isBoolean = (object: unknown): boolean => {
 export const isFunction = (object: unknown): boolean => {
   return typeof object === 'function';
 };
-
