@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import {isEmpty, isNotEmpty} from "../../src";
+import { isEmpty, isNotEmpty } from "../../src";
 
 const tests = [
   ["null", null, true, false],
