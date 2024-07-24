@@ -3,14 +3,14 @@ import { isArray, isBoolean, isNull, isNumber, isObject, isString, isUndefined }
 /**
  * Returns whether the object is a neither null nor undefined.
  */
-export const isSet = (object: unknown): boolean => {
+export const isSet = (object: unknown): object is NonNullable<unknown> => {
   return !isNotSet(object);
 };
 
 /**
  * Returns whether the object is a either null or undefined.
  */
-export const isNotSet = (object: unknown): boolean => {
+export const isNotSet = (object: unknown): object is null | undefined => {
   return isUndefined(object) || isNull(object);
 };
 
@@ -28,11 +28,11 @@ export const isNotSet = (object: unknown): boolean => {
 export const isEmpty = (object: unknown): boolean => {
   return (
     isNotSet(object) ||
-    (isBoolean(object) && object === false) ||
-    (isArray(object) && (object as Array<unknown>).length === 0) ||
+    (isBoolean(object) && !object) ||
+    (isArray(object) && object.length === 0) ||
     (isString(object) && object === '') ||
     (isNumber(object) && object === 0) ||
-    (isObject(object) && Object.keys(object as object).length === 0)
+    (isObject(object) && Object.keys(object).length === 0)
   );
 };
 
@@ -56,7 +56,7 @@ export const isNotEmpty = (object: unknown): boolean => {
  */
 export const containsValue = (arrayOrObject: Array<unknown> | Record<string, unknown>, value: unknown): boolean => {
   return (
-    (isArray(arrayOrObject) && (arrayOrObject as Array<unknown>).indexOf(value) !== -1) ||
+    (isArray(arrayOrObject) && arrayOrObject.indexOf(value) !== -1) ||
     (isObject(arrayOrObject) && Object.values(arrayOrObject).indexOf(value) !== -1)
   );
 };
