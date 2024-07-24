@@ -1,3 +1,2 @@
-export * from './types';
-export * from './functions';
+export * from './types/index';
 export * from './state/index';
