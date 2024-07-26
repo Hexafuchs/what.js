@@ -48,3 +48,24 @@ export function assertIsBigIntOrNull(object: unknown): asserts object is bigint 
 export function assertIsNotBigInt<T>(object: T | bigint): asserts object is T {
   assertIsNot(types.isBigInt, object, 'bigint');
 }
+
+/**
+ * Asserts the object is a number or bigint.
+ */
+export function assertIsNumericPrimitive(object: unknown): asserts object is number | bigint {
+  assertIs(types.isNumericPrimitive, object, 'number or bigint');
+}
+
+/**
+ * Asserts the object is a number, bigint or null.
+ */
+export function assertIsNumericPrimitiveOrNull(object: unknown): asserts object is number | bigint | null {
+  assertIs(obj => types.isNull(obj) || types.isNumericPrimitive(obj), object, 'number, bigint or null');
+}
+
+/**
+ * Asserts the object is not a number or bigint.
+ */
+export function assertIsNotNumericPrimitive<T>(object: T | bigint | number): asserts object is T {
+  assertIsNot(types.isNumericPrimitive, object, 'number or bigint');
+}
