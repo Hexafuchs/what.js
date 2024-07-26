@@ -4,17 +4,17 @@ import { assert } from '@/assertions/base';
 /**
  * Asserts the object is not null or undefined.
  *
- * @alias assertPresent
+ * @alias assertIsPresent
  */
-export function assertPresent(object: unknown): asserts object is NonNullable<unknown> {
+export function assertIsPresent(object: unknown): asserts object is NonNullable<unknown> {
   assert(() => state.isPresent(object), `object is not considered preset: ${String(object)}`);
 }
 
-export const assertDefined = assertPresent;
+export const assertIsDefined = assertIsPresent;
 
 /**
  * Asserts the object is null or undefined.
  */
-export function assertNotSet(object: unknown): asserts object is null | undefined {
+export function assertIsNotPresent(object: unknown): asserts object is null | undefined {
   assert(() => state.isNotPresent(object), `object is considered preset: ${String(object)}`);
 }

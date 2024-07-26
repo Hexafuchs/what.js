@@ -12,7 +12,7 @@ import { assert } from '@/assertions/base';
  * - empty array []
  * - empty object {}
  */
-export function assertEmpty(object: unknown) {
+export function assertIsEmpty(object: unknown) {
   assert(() => state.isEmpty(object), `object is not considered empty: ${String(object)}`);
 }
 
@@ -27,6 +27,6 @@ export function assertEmpty(object: unknown) {
  * - empty array []
  * - empty object {}
  */
-export function assertNotEmpty(object: unknown) {
+export function assertIsNotEmpty(object: unknown) {
   assert(() => state.isNotEmpty(object), `object is considered empty: ${String(object)}`);
 }
