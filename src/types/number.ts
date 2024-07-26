@@ -10,6 +10,13 @@ export function isNumber(object: unknown): object is number {
 /**
  * Returns whether the object is a bigint.
  */
-export function isBigInt(object: unknown): object is number {
+export function isBigInt(object: unknown): object is bigint {
   return typeof object === 'bigint';
+}
+
+/**
+ * Returns whether the object is a number or bigint.
+ */
+export function isNumericPrimitive(object: unknown): object is number | bigint {
+  return isNumber(object) || isBigInt(object);
 }
