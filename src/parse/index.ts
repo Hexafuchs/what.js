@@ -1,1 +1,1 @@
-export * from './truthy';
+export * from './accepted';

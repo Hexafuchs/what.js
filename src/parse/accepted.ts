@@ -1,5 +1,5 @@
-/*
- * Returns if the value is "truthy".
+/**
+ * Returns if the value is a value that expresses acceptance.
  *
  * This includes everything that can be converted with String(value) and has one of these values in lowercase:
  * - true
@@ -9,14 +9,17 @@
  * - yes
  * - y
  */
-export const isTruthy = (value: unknown): boolean => {
+export const isAccepted = (value: unknown): boolean => {
   const repr = String(value).toLowerCase();
 
-  return repr === 'true' || repr === 't' || repr === '1' || repr === 'on' || repr === 'yes' || repr === 'y';
+  return repr === 'true' || repr === 't' || repr === 'yes' || repr === 'y' || repr === 'on' || repr === '1';
 };
 
-/*
- * Returns if the value is "falsy".
+export const isYes = isAccepted;
+export const isOn = isAccepted;
+
+/**
+ * Returns if the value is a value that expresses decline.
  *
  * This includes everything that can be converted with String(value) and has one of these values in lowercase:
  * - false
@@ -27,16 +30,19 @@ export const isTruthy = (value: unknown): boolean => {
  * - no
  * - n
  */
-export const isFalsy = (value: unknown): boolean => {
+export const isDeclined = (value: unknown): boolean => {
   const repr = String(value).toLowerCase();
 
   return (
-    repr === 'false' || repr === 'f' || repr === '0' || repr === '-1' || repr === 'off' || repr === 'no' || repr === 'n'
+    repr === 'false' || repr === 'f' || repr === 'no' || repr === 'n' || repr === 'off' || repr === '0' || repr === '-1'
   );
 };
 
-/*
- * Returns if the value is "nullish".
+export const isNo = isDeclined;
+export const isOff = isDeclined;
+
+/**
+ * Returns if the value is considered missing.
  *
  * This includes everything that can be converted with String(value) and has one of these values in lowercase:
  * - null
@@ -44,8 +50,10 @@ export const isFalsy = (value: unknown): boolean => {
  * - none
  * - '' (empty string)
  */
-export const isNullish = (value: unknown): boolean => {
+export const isMissing = (value: unknown): boolean => {
   const repr = String(value).toLowerCase();
 
   return repr === 'null' || repr === 'undefined' || repr === 'none' || repr === '';
 };
+
+export const isNullish = isMissing;
