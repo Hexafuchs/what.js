@@ -1,5 +1,5 @@
 import { isArray, isBoolean, isNumber, isObject, isString } from '@@/src';
-import { isNotSet } from '@/state/set';
+import { isNotPresent } from '@/state/set';
 
 /**
  * Returns whether the object is considered empty.
@@ -14,7 +14,7 @@ import { isNotSet } from '@/state/set';
  */
 export const isEmpty = (object: unknown): boolean => {
   return (
-    isNotSet(object) ||
+    isNotPresent(object) ||
     (isBoolean(object) && !object) ||
     (isArray(object) && object.length === 0) ||
     (isString(object) && object === '') ||
