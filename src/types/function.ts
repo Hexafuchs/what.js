@@ -1,4 +1,4 @@
-import { isSet } from '@@/src';
+import { isDefined } from '@@/src';
 
 /**
  * Returns whether the object is a function.
@@ -12,5 +12,5 @@ export const isFunction = (object: unknown): object is Function => {
  * Returns if the object has the given function.
  */
 export const hasFunction = <T>(object: T, name: string): boolean => {
-  return isSet(object) && isFunction(object[name as keyof T]);
+  return isDefined(object) && isFunction(object[name as keyof T]);
 };

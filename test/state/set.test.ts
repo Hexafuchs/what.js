@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import {isSet, isNotSet} from "../../src";
+import { isPresent, isNotPresent } from "../../src";
 
 const tests = [
   ["null", null, false, true],
@@ -21,11 +21,11 @@ const tests = [
   ["non-empty objects", {'hello': 'world'}, true, false],
 ]
 
-describe("isSet", () => {
+describe("isPresent", () => {
   for (const test of tests) {
     it("should be " + (test[2] ? 'positive' : 'negative') + " about " + test[0], () => {
-      expect(isSet(test[1])).toBe(test[2]);
-      expect(isNotSet(test[1])).toBe(test[3]);
+      expect(isPresent(test[1])).toBe(test[2]);
+      expect(isNotPresent(test[1])).toBe(test[3]);
     });
   }
 });
