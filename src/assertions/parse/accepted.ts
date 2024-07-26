@@ -12,14 +12,14 @@ import { assert, assertNot } from '@/assertions/base';
  * - on
  * - 1
  *
- * @alias assertsIsAccepted
+ * @alias assertIsAccepted
  */
-export function assertsIsAccepted(value: unknown) {
+export function assertIsAccepted(value: unknown) {
   assert(() => parse.isAccepted(value), `value is not considered accepted: ${String(value)}`);
 }
 
-export const assertsIsYes = assertsIsAccepted;
-export const assertsIsOn = assertsIsAccepted;
+export const assertIsYes = assertIsAccepted;
+export const assertIsOn = assertIsAccepted;
 
 /**
  * Asserts the value is a value that doesn't express acceptance.
@@ -32,14 +32,14 @@ export const assertsIsOn = assertsIsAccepted;
  * - on
  * - 1
  *
- * @alias assertsIsNotAccepted
+ * @alias assertIsNotAccepted
  */
-export function assertsIsNotAccepted(value: unknown) {
+export function assertIsNotAccepted(value: unknown) {
   assertNot(() => parse.isAccepted(value), `value is considered accepted: ${String(value)}`);
 }
 
-export const assertsIsNotYes = assertsIsNotAccepted;
-export const assertsIsNotOn = assertsIsNotAccepted;
+export const assertIsNotYes = assertIsNotAccepted;
+export const assertIsNotOn = assertIsNotAccepted;
 
 /**
  * Asserts the value is a value that expresses decline.
@@ -53,14 +53,14 @@ export const assertsIsNotOn = assertsIsNotAccepted;
  * - 0
  * - -1
  *
- * @alias assertsIsDeclined
+ * @alias assertIsDeclined
  */
-export function assertsIsDeclined(value: unknown) {
+export function assertIsDeclined(value: unknown) {
   assert(() => parse.isDeclined(value), `value is not considered declined: ${String(value)}`);
 }
 
-export const assertsIsNo = assertsIsDeclined;
-export const assertsIsOff = assertsIsDeclined;
+export const assertIsNo = assertIsDeclined;
+export const assertIsOff = assertIsDeclined;
 
 /**
  * Asserts the value is a value that doesn't express decline.
@@ -74,14 +74,14 @@ export const assertsIsOff = assertsIsDeclined;
  * - 0
  * - -1
  *
- * @alias assertsIsNotDeclined
+ * @alias assertIsNotDeclined
  */
-export function assertsIsNotDeclined(value: unknown) {
+export function assertIsNotDeclined(value: unknown) {
   assertNot(() => parse.isDeclined(value), `value is considered declined: ${String(value)}`);
 }
 
-export const assertsIsNotNo = assertsIsNotDeclined;
-export const assertsIsNotOff = assertsIsNotDeclined;
+export const assertIsNotNo = assertIsNotDeclined;
+export const assertIsNotOff = assertIsNotDeclined;
 
 /**
  * Asserts the value is considered missing.
@@ -92,13 +92,13 @@ export const assertsIsNotOff = assertsIsNotDeclined;
  * - none
  * - '' (empty string)
  *
- * @alias assertsIsMissing
+ * @alias assertIsMissing
  */
-export function assertsIsMissing(value: unknown) {
+export function assertIsMissing(value: unknown) {
   assert(() => parse.isMissing(value), `value is not considered missing: ${String(value)}`);
 }
 
-export const assertsIsNullish = assertsIsMissing;
+export const assertIsNullish = assertIsMissing;
 
 /**
  * Asserts the value is not considered missing.
@@ -109,10 +109,10 @@ export const assertsIsNullish = assertsIsMissing;
  * - none
  * - '' (empty string)
  *
- * @alias assertsIsNotMissing
+ * @alias assertIsNotMissing
  */
-export function assertsIsNotMissing(value: unknown) {
+export function assertIsNotMissing(value: unknown) {
   assertNot(() => parse.isMissing(value), `value is considered missing: ${String(value)}`);
 }
 
-export const assertsIsNotNullish = assertsIsNotMissing;
+export const assertIsNotNullish = assertIsNotMissing;
