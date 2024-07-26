@@ -5,3 +5,4 @@ export * from './map';
 export * from './object';
 export * from './promise';
 export * from './regexp';
+export * from './set';
