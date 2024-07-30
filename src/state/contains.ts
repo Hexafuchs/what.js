@@ -1,7 +1,9 @@
-import { isArray, isObject, isSet, isMap, isString } from '@@/src';
+import { isArray, isObject, isSet, isMap } from '@@/src';
 
 /**
  * Returns whether the object or array contains the given value.
+ *
+ * Supports maps and sets.
  *
  * @group Checker
  * @category State

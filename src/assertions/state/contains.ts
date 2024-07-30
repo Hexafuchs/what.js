@@ -4,6 +4,8 @@ import { assert, assertNot } from '@/assertions/base';
 /**
  * Asserts the object or array contains the given value.
  *
+ * Supports maps and sets.
+ *
  * @group Assertions
  * @category State
  */
@@ -18,6 +20,8 @@ export const assertHasValue = assertContainsValue;
 
 /**
  * Asserts the object or array does not contain the given value.
+ *
+ * Supports maps and sets.
  *
  * @group Assertions
  * @category State
