@@ -11,6 +11,9 @@ import { assert } from '@/assertions/base';
  * - 0 or 0.0
  * - empty array []
  * - empty object {}
+ *
+ * @group Assertions
+ * @category State
  */
 export function assertIsEmpty(object: unknown) {
   assert(() => state.isEmpty(object), `object is not considered empty: ${String(object)}`);
@@ -26,6 +29,9 @@ export function assertIsEmpty(object: unknown) {
  * - 0 or 0.0
  * - empty array []
  * - empty object {}
+ *
+ * @group Assertions
+ * @category State
  */
 export function assertIsNotEmpty(object: unknown) {
   assert(() => state.isNotEmpty(object), `object is considered empty: ${String(object)}`);

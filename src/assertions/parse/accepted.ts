@@ -13,12 +13,20 @@ import { assert, assertNot } from '@/assertions/base';
  * - 1
  *
  * @alias assertIsAccepted
+ * @group Assertions
+ * @category Parse
  */
 export function assertIsAccepted(value: unknown) {
   assert(() => parse.isAccepted(value), `value is not considered accepted: ${String(value)}`);
 }
 
+/**
+ * @alias {@link assertIsAccepted}
+ */
 export const assertIsYes = assertIsAccepted;
+/**
+ * @alias {@link assertIsAccepted}
+ */
 export const assertIsOn = assertIsAccepted;
 
 /**
@@ -33,12 +41,20 @@ export const assertIsOn = assertIsAccepted;
  * - 1
  *
  * @alias assertIsNotAccepted
+ * @group Assertions
+ * @category Parse
  */
 export function assertIsNotAccepted(value: unknown) {
   assertNot(() => parse.isAccepted(value), `value is considered accepted: ${String(value)}`);
 }
 
+/**
+ * @alias {@link assertIsNotAccepted}
+ */
 export const assertIsNotYes = assertIsNotAccepted;
+/**
+ * @alias {@link assertIsNotAccepted}
+ */
 export const assertIsNotOn = assertIsNotAccepted;
 
 /**
@@ -54,12 +70,20 @@ export const assertIsNotOn = assertIsNotAccepted;
  * - -1
  *
  * @alias assertIsDeclined
+ * @group Assertions
+ * @category Parse
  */
 export function assertIsDeclined(value: unknown) {
   assert(() => parse.isDeclined(value), `value is not considered declined: ${String(value)}`);
 }
 
+/**
+ * @alias {@link assertIsDeclined}
+ */
 export const assertIsNo = assertIsDeclined;
+/**
+ * @alias {@link assertIsDeclined}
+ */
 export const assertIsOff = assertIsDeclined;
 
 /**
@@ -75,12 +99,20 @@ export const assertIsOff = assertIsDeclined;
  * - -1
  *
  * @alias assertIsNotDeclined
+ * @group Assertions
+ * @category Parse
  */
 export function assertIsNotDeclined(value: unknown) {
   assertNot(() => parse.isDeclined(value), `value is considered declined: ${String(value)}`);
 }
 
+/**
+ * @alias {@link assertIsNotDeclined}
+ */
 export const assertIsNotNo = assertIsNotDeclined;
+/**
+ * @alias {@link assertIsNotDeclined}
+ */
 export const assertIsNotOff = assertIsNotDeclined;
 
 /**
@@ -93,11 +125,16 @@ export const assertIsNotOff = assertIsNotDeclined;
  * - '' (empty string)
  *
  * @alias assertIsMissing
+ * @group Assertions
+ * @category Parse
  */
 export function assertIsMissing(value: unknown) {
   assert(() => parse.isMissing(value), `value is not considered missing: ${String(value)}`);
 }
 
+/**
+ * @alias {@link assertIsMissing}
+ */
 export const assertIsNullish = assertIsMissing;
 
 /**
@@ -110,9 +147,14 @@ export const assertIsNullish = assertIsMissing;
  * - '' (empty string)
  *
  * @alias assertIsNotMissing
+ * @group Assertions
+ * @category Parse
  */
 export function assertIsNotMissing(value: unknown) {
   assertNot(() => parse.isMissing(value), `value is considered missing: ${String(value)}`);
 }
 
+/**
+ * @alias {@link assertIsNotMissing}
+ */
 export const assertIsNotNullish = assertIsNotMissing;

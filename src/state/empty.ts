@@ -11,6 +11,11 @@ import { isNotPresent } from '@/state';
  * - 0 or 0.0
  * - empty array []
  * - empty object {}
+ * - empty set
+ * - empty map
+ *
+ * @group Checker
+ * @category State
  */
 export const isEmpty = (object: unknown): boolean => {
   return (
@@ -41,6 +46,11 @@ export const isEmpty = (object: unknown): boolean => {
  * - 0 and 0.0
  * - empty array []
  * - empty object {}
+ * - empty set
+ * - empty map
+ *
+ * @group Checker
+ * @category State
  */
 export const isNotEmpty = (object: unknown): boolean => {
   return !isEmpty(object);

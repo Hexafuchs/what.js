@@ -8,6 +8,9 @@
  * - on
  * - yes
  * - y
+ *
+ * @group Checker
+ * @category Parse
  */
 export const isAccepted = (value: unknown): boolean => {
   const repr = String(value).toLowerCase();
@@ -15,7 +18,13 @@ export const isAccepted = (value: unknown): boolean => {
   return repr === 'true' || repr === 't' || repr === 'yes' || repr === 'y' || repr === 'on' || repr === '1';
 };
 
+/**
+ * @alias {@link isAccepted}
+ */
 export const isYes = isAccepted;
+/**
+ * @alias {@link isAccepted}
+ */
 export const isOn = isAccepted;
 
 /**
@@ -29,6 +38,9 @@ export const isOn = isAccepted;
  * - off
  * - no
  * - n
+ *
+ * @group Checker
+ * @category Parse
  */
 export const isDeclined = (value: unknown): boolean => {
   const repr = String(value).toLowerCase();
@@ -38,7 +50,13 @@ export const isDeclined = (value: unknown): boolean => {
   );
 };
 
+/**
+ * @alias {@link isDeclined}
+ */
 export const isNo = isDeclined;
+/**
+ * @alias {@link isDeclined}
+ */
 export const isOff = isDeclined;
 
 /**
@@ -49,6 +67,9 @@ export const isOff = isDeclined;
  * - undefined
  * - none
  * - '' (empty string)
+ *
+ * @group Checker
+ * @category Parse
  */
 export const isMissing = (value: unknown): boolean => {
   const repr = String(value).toLowerCase();
@@ -56,4 +77,7 @@ export const isMissing = (value: unknown): boolean => {
   return repr === 'null' || repr === 'undefined' || repr === 'none' || repr === '';
 };
 
+/**
+ * @alias {@link isMissing}
+ */
 export const isNullish = isMissing;
