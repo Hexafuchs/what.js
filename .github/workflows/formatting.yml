@@ -1,4 +1,4 @@
-name: Fix Typescript code style issues
+name: Run Formatter
 
 on:
   push:
