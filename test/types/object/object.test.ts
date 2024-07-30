@@ -1,7 +1,9 @@
-import { describe, expect, it } from "vitest";
-import {isObject} from "../../../src";
+import { describe } from "vitest";
+import { assertIsNotObject, assertIsObject, assertIsObjectOrNull, isObject } from "../../../src";
+import { testIs } from '../../helper/checker';
+import { testAssertIs, testAssertIsNot, testAssertIsOrNull } from '../../helper/assertions';
 
-const tests = [
+const baseTests: Array<[string, unknown, boolean]> = [
   ["null", null, false],
   ["undefined", undefined, false],
   ["true", true, false],
@@ -31,10 +33,12 @@ const tests = [
   ["date", new Date, true],
 ]
 
-describe("isObject", () => {
-  for (const test of tests) {
-    it("should be " + (test[2] ? 'positive' : 'negative') + " about " + test[0], () => {
-      expect(isObject(test[1])).toBe(test[2]);
-    });
-  }
+describe("object checker", () => {
+  testIs(isObject, baseTests);
+});
+
+describe("object assertions", () => {
+  testAssertIs(assertIsObject, baseTests);
+  testAssertIsNot(assertIsNotObject, baseTests);
+  testAssertIsOrNull(assertIsObjectOrNull, baseTests);
 });
