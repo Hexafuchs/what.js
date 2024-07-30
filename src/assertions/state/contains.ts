@@ -37,3 +37,37 @@ export function assertNotContainsValue<T>(
  * @alias {@link assertNotContainsValue}
  */
 export const assertHasNotValue = assertNotContainsValue;
+
+/**
+ * Asserts the object contains the given key.
+ *
+ * Supports maps.
+ *
+ * @group Assertions
+ * @category State
+ */
+export function assertContainsKey<T>(container: Record<string, unknown> | Map<T, unknown>, key: string | T) {
+  assert(() => state.containsKey(container, key), `array or object does not contain key: ${String(key)}`);
+}
+
+/**
+ * @alias {@link assertContainsKey}
+ */
+export const assertHasKey = assertContainsKey;
+
+/**
+ * Asserts the object or array does not contain the given key.
+ *
+ * Supports maps.
+ *
+ * @group Assertions
+ * @category State
+ */
+export function assertNotContainsKey<T>(container: Record<string, unknown> | Map<T, unknown>, key: string | T) {
+  assertNot(() => state.containsKey(container, key), `array or object does not contain key: ${String(key)}`);
+}
+
+/**
+ * @alias {@link assertNotContainsKey}
+ */
+export const assertHasNotKey = assertNotContainsKey;
