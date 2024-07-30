@@ -1,4 +1,16 @@
-import { isArray, isBoolean, isNumber, isObject, isString, isDate, isError, isPromise, isRegExp, isMap, isSet } from '@@/src';
+import {
+  isArray,
+  isBoolean,
+  isNumber,
+  isObject,
+  isString,
+  isDate,
+  isError,
+  isPromise,
+  isRegExp,
+  isMap,
+  isSet,
+} from '@@/src';
 import { isNotPresent } from '@/state';
 
 /**
