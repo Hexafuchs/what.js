@@ -1,31 +1,42 @@
-import { describe, expect, it } from "vitest";
-import { isEmpty, isNotEmpty } from "../../src";
+import { describe } from "vitest";
+import { assertIsEmpty, assertIsNotEmpty, isEmpty, isNotEmpty } from "../../src";
+import { testIs, testIsNot } from '../helper/checker';
+import { testAssertIs, testAssertIsNot } from '../helper/assertions';
 
-const tests = [
-  ["null", null, true, false],
-  ["undefined", undefined, true, false],
-  ["true", true, false, true],
-  ["false", false, true, false],
-  ["empty string", "", true, false],
-  ["non-empty string", "hello", false, true],
-  ["zero", 0, true, false],
-  ["positive integer", 42, false, true],
-  ["negative integer", -42, false, true],
-  ["zero float", 0.0, true, false],
-  ["positive float", 42.0, false, true],
-  ["negative float", -42.0, false, true],
-  ["functions", () => {}, false, true],
-  ["empty arrays", [], true, false],
-  ["non-empty arrays", [42], false, true],
-  ["empty objects", {}, true, false],
-  ["non-empty objects", {'hello': 'world'}, false, true],
-]
+const baseTests: Array<[string, unknown, boolean]> = [
+  ["null", null, true],
+  ["undefined", undefined, true],
+  ["true", true, false],
+  ["false", false, true],
+  ["empty string", "", true],
+  ["non-empty string", "hello", false],
+  ["zero", 0, true],
+  ["positive integer", 42, false],
+  ["negative integer", -42, false],
+  ["zero float", 0.0, true],
+  ["positive float", 42.0, false],
+  ["negative float", -42.0, false],
+  ["functions", () => {}, false],
+  ["empty arrays", [], true],
+  ["non-empty arrays", [42], false],
+  ["empty objects", {}, true],
+  ["non-empty objects", {'hello': 'world'}, false],
+  ["empty sets", new Set, true],
+  ["non-empty sets", new Set([4,4,2]), false],
+  ["empty map", new Map, true],
+  ["non-empty map", new Map([[1, 'hello'], [2, 'world']]), false],
+  ["regexp", /helloworld/, false],
+  ["promise", (async () => {})(), false],
+  ["error", new Error, false],
+  ["date", new Date, false],
+];
 
-describe("isEmpty", () => {
-  for (const test of tests) {
-    it("should be " + (test[2] ? 'positive' : 'negative') + " about " + test[0], () => {
-      expect(isEmpty(test[1])).toBe(test[2]);
-      expect(isNotEmpty(test[1])).toBe(test[3]);
-    });
-  }
+describe("empty checker", () => {
+  testIs(isEmpty, baseTests);
+  testIsNot(isNotEmpty, baseTests);
+});
+
+describe("empty assertions", () => {
+  testAssertIs(assertIsEmpty, baseTests);
+  testAssertIsNot(assertIsNotEmpty, baseTests);
 });
