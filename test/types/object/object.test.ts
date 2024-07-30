@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import {isArray} from "../../src";
+import {isObject} from "../../../src";
 
 const tests = [
   ["null", null, false],
@@ -14,17 +14,27 @@ const tests = [
   ["zero float", 0.0, false],
   ["positive float", 42.0, false],
   ["negative float", -42.0, false],
+  ["zero bigint", BigInt(0), false],
+  ["big bigint", BigInt(9007199254740991), false],
   ["functions", () => {}, false],
   ["empty arrays", [], true],
   ["non-empty arrays", [42], true],
-  ["empty objects", {}, false],
-  ["non-empty objects", {'hello': 'world'}, false],
+  ["empty objects", {}, true],
+  ["non-empty objects", {'hello': 'world'}, true],
+  ["empty sets", new Set, true],
+  ["non-empty sets", new Set([4,4,2]), true],
+  ["empty map", new Map, true],
+  ["non-empty map", new Map([[1, 'hello'], [2, 'world']]), true],
+  ["regexp", /helloworld/, true],
+  ["promise", (async () => {})(), true],
+  ["error", new Error, true],
+  ["date", new Date, true],
 ]
 
-describe("isArray", () => {
+describe("isObject", () => {
   for (const test of tests) {
     it("should be " + (test[2] ? 'positive' : 'negative') + " about " + test[0], () => {
-      expect(isArray(test[1])).toBe(test[2]);
+      expect(isObject(test[1])).toBe(test[2]);
     });
   }
 });
