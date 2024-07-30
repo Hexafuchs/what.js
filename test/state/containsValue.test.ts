@@ -3,8 +3,8 @@ import {
   assertContainsValue, assertHasNotValue, assertHasValue, assertNotContainsValue,
   containsValue,
   hasValue,
+  AssertionError
 } from "../../src";
-import { AssertionError } from 'node:assert';
 
 const baseTests: Array<[string, Record<string, number>|Array<number>|Set<number>|Map<number, number>, number, boolean]> = [
   ["empty arrays", [], 42, false],

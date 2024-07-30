@@ -5,9 +5,9 @@ import {
   assertHasKey,
   assertNotContainsKey,
   containsKey,
-  hasKey
+  hasKey,
+  AssertionError
 } from "../../src";
-import { AssertionError } from 'node:assert';
 
 const baseTests: Array<[string, Record<string, number>|Map<number, number>, number, boolean]> = [
   ["empty objects", {}, 42, false],

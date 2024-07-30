@@ -1,4 +1,4 @@
-import { AssertionError } from 'node:assert';
+import { AssertionError } from '@@/src';
 
 /**
  * @internal
@@ -19,7 +19,7 @@ export function assertIsNot<T>(callback: { (object: T): boolean }, object: T, ty
  */
 export function assert(callback: { (): boolean }, errorMsg: string): void {
   if (!callback()) {
-    throw new AssertionError({ message: errorMsg });
+    throw new AssertionError(errorMsg);
   }
 }
 
@@ -28,6 +28,6 @@ export function assert(callback: { (): boolean }, errorMsg: string): void {
  */
 export function assertNot(callback: { (): boolean }, errorMsg: string): void {
   if (callback()) {
-    throw new AssertionError({ message: errorMsg });
+    throw new AssertionError(errorMsg);
   }
 }

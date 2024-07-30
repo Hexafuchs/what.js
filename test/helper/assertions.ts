@@ -1,5 +1,5 @@
 import { assert, it } from 'vitest';
-import { AssertionError } from 'node:assert';
+import { AssertionError } from "../../src";
 
 export function testAssertIs(method: (value: unknown) => void, tests: Array<[string, unknown, boolean]>) {
   for (const test of tests) {
