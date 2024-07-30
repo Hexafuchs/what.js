@@ -1,4 +1,4 @@
 export * from './contains';
 export * from './empty';
-export * from './set';
+export * from './present';
 export * from './functions';
