@@ -1,4 +1,4 @@
-import * as state from '@@/src/state/index';
+import { hasFunction } from '@@/src';
 import { assert, assertNot } from '@/assertions/base';
 
 /**
@@ -8,7 +8,7 @@ import { assert, assertNot } from '@/assertions/base';
  * @category Type
  */
 export function assertHasFunction<T>(object: T, name: string) {
-  assert(() => state.hasFunction(object, name), `object has no function ${name}`);
+  assert(() => hasFunction(object, name), `object has no function ${name}`);
 }
 
 /**
@@ -18,7 +18,7 @@ export function assertHasFunction<T>(object: T, name: string) {
  * @category Type
  */
 export function assertHasNotFunction<T>(object: T, name: string) {
-  assertNot(() => state.hasFunction(object, name), `object has function ${name}`);
+  assertNot(() => hasFunction(object, name), `object has function ${name}`);
 }
 
 /**

@@ -1,4 +1,4 @@
-import * as types from '@@/src/types/index';
+import { isSet, isNull } from '@@/src';
 import { assertIs, assertIsNot } from '@/assertions/base';
 
 /**
@@ -8,7 +8,7 @@ import { assertIs, assertIsNot } from '@/assertions/base';
  * @category Type
  */
 export function assertIsSet(object: unknown): asserts object is Set<unknown> {
-  assertIs(types.isSet, object, 'set');
+  assertIs(isSet, object, 'set');
 }
 
 /**
@@ -18,7 +18,7 @@ export function assertIsSet(object: unknown): asserts object is Set<unknown> {
  * @category Type
  */
 export function assertIsSetOrNull(object: unknown): asserts object is Set<unknown> | null {
-  assertIs(obj => types.isNull(obj) || types.isSet(obj), object, 'set or null');
+  assertIs(obj => isNull(obj) || isSet(obj), object, 'set or null');
 }
 
 /**
@@ -28,5 +28,5 @@ export function assertIsSetOrNull(object: unknown): asserts object is Set<unknow
  * @category Type
  */
 export function assertIsNotSet<T>(object: T | Set<unknown>): asserts object is T {
-  assertIsNot(types.isSet, object, 'set');
+  assertIsNot(isSet, object, 'set');
 }

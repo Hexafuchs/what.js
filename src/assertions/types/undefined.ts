@@ -1,4 +1,4 @@
-import * as types from '@@/src/types/index';
+import { isUndefined } from '@@/src';
 import { assertIs, assertIsNot } from '@/assertions/base';
 
 /**
@@ -10,7 +10,7 @@ import { assertIs, assertIsNot } from '@/assertions/base';
  * @category Type
  */
 export function assertIsUndefined(object: unknown): asserts object is undefined {
-  assertIs(types.isUndefined, object, 'undefined');
+  assertIs(isUndefined, object, 'undefined');
 }
 
 /**
@@ -25,7 +25,7 @@ export const assertIsNotDefined = assertIsUndefined;
  * @category Type
  */
 export function assertIsNotUndefined<T>(object: T | undefined): asserts object is T {
-  assertIsNot(types.isUndefined, object, 'undefined');
+  assertIsNot(isUndefined, object, 'undefined');
 }
 
 /**

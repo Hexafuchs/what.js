@@ -1,4 +1,4 @@
-import * as types from '@@/src/types/index';
+import { isRegExp, isNull } from '@@/src';
 import { assertIs, assertIsNot } from '@/assertions/base';
 
 /**
@@ -8,7 +8,7 @@ import { assertIs, assertIsNot } from '@/assertions/base';
  * @category Type
  */
 export function assertIsRegExp(object: unknown): asserts object is RegExp {
-  assertIs(types.isRegExp, object, 'regexp');
+  assertIs(isRegExp, object, 'regexp');
 }
 
 /**
@@ -18,7 +18,7 @@ export function assertIsRegExp(object: unknown): asserts object is RegExp {
  * @category Type
  */
 export function assertIsRegExpOrNull(object: unknown): asserts object is RegExp | null {
-  assertIs(obj => types.isNull(obj) || types.isRegExp(obj), object, 'regexp or null');
+  assertIs(obj => isNull(obj) || isRegExp(obj), object, 'regexp or null');
 }
 
 /**
@@ -28,5 +28,5 @@ export function assertIsRegExpOrNull(object: unknown): asserts object is RegExp 
  * @category Type
  */
 export function assertIsNotRegExp<T>(object: T | RegExp): asserts object is T {
-  assertIsNot(types.isRegExp, object, 'regexp');
+  assertIsNot(isRegExp, object, 'regexp');
 }

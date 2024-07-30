@@ -1,4 +1,4 @@
-import * as types from '@@/src/types/index';
+import { isObject, isNull } from '@@/src';
 import { assertIs, assertIsNot } from '@/assertions/base';
 
 /**
@@ -13,7 +13,7 @@ import { assertIs, assertIsNot } from '@/assertions/base';
  * @category Type
  */
 export function assertIsObject(object: unknown): asserts object is NonNullable<object> {
-  assertIs(types.isObject, object, 'object');
+  assertIs(isObject, object, 'object');
 }
 
 /**
@@ -25,7 +25,7 @@ export function assertIsObject(object: unknown): asserts object is NonNullable<o
  * @category Type
  */
 export function assertIsObjectOrNull(object: unknown): asserts object is object | null {
-  assertIs(obj => types.isNull(obj) || types.isObject(obj), object, 'object or null');
+  assertIs(obj => isNull(obj) || isObject(obj), object, 'object or null');
 }
 
 /**
@@ -37,5 +37,5 @@ export function assertIsObjectOrNull(object: unknown): asserts object is object 
  * @category Type
  */
 export function assertIsNotObject<T>(object: T | object): asserts object is T {
-  assertIsNot(types.isObject, object, 'object');
+  assertIsNot(isObject, object, 'object');
 }

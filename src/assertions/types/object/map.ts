@@ -1,4 +1,4 @@
-import * as types from '@@/src/types/index';
+import { isMap, isNull } from '@@/src';
 import { assertIs, assertIsNot } from '@/assertions/base';
 
 /**
@@ -8,7 +8,7 @@ import { assertIs, assertIsNot } from '@/assertions/base';
  * @category Type
  */
 export function assertIsMap(object: unknown): asserts object is Map<unknown, unknown> {
-  assertIs(types.isMap, object, 'map');
+  assertIs(isMap, object, 'map');
 }
 
 /**
@@ -18,7 +18,7 @@ export function assertIsMap(object: unknown): asserts object is Map<unknown, unk
  * @category Type
  */
 export function assertIsMapOrNull(object: unknown): asserts object is Map<unknown, unknown> | null {
-  assertIs(obj => types.isNull(obj) || types.isMap(obj), object, 'map or null');
+  assertIs(obj => isNull(obj) || isMap(obj), object, 'map or null');
 }
 
 /**
@@ -28,5 +28,5 @@ export function assertIsMapOrNull(object: unknown): asserts object is Map<unknow
  * @category Type
  */
 export function assertIsNotMap<T>(object: T | Map<unknown, unknown>): asserts object is T {
-  assertIsNot(types.isMap, object, 'map');
+  assertIsNot(isMap, object, 'map');
 }

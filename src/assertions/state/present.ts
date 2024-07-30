@@ -1,4 +1,4 @@
-import * as state from '@@/src/state/index';
+import { isNotPresent, isPresent } from '@@/src';
 import { assert } from '@/assertions/base';
 
 /**
@@ -10,7 +10,7 @@ import { assert } from '@/assertions/base';
  * @category State
  */
 export function assertIsPresent(object: unknown): asserts object is NonNullable<unknown> {
-  assert(() => state.isPresent(object), `object is not considered present: ${String(object)}`);
+  assert(() => isPresent(object), `object is not considered present: ${String(object)}`);
 }
 
 /**
@@ -20,5 +20,5 @@ export function assertIsPresent(object: unknown): asserts object is NonNullable<
  * @category State
  */
 export function assertIsNotPresent(object: unknown): asserts object is null | undefined {
-  assert(() => state.isNotPresent(object), `object is considered present: ${String(object)}`);
+  assert(() => isNotPresent(object), `object is considered present: ${String(object)}`);
 }

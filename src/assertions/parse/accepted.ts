@@ -1,5 +1,5 @@
-import * as parse from '@@/src/parse/index';
 import { assert, assertNot } from '@/assertions/base';
+import { isAccepted, isDeclined, isMissing } from '@@/src';
 
 /**
  * Asserts the value is a value that expresses acceptance.
@@ -17,7 +17,7 @@ import { assert, assertNot } from '@/assertions/base';
  * @category Parse
  */
 export function assertIsAccepted(value: unknown) {
-  assert(() => parse.isAccepted(value), `value is not considered accepted: ${String(value)}`);
+  assert(() => isAccepted(value), `value is not considered accepted: ${String(value)}`);
 }
 
 /**
@@ -45,7 +45,7 @@ export const assertIsOn = assertIsAccepted;
  * @category Parse
  */
 export function assertIsNotAccepted(value: unknown) {
-  assertNot(() => parse.isAccepted(value), `value is considered accepted: ${String(value)}`);
+  assertNot(() => isAccepted(value), `value is considered accepted: ${String(value)}`);
 }
 
 /**
@@ -74,7 +74,7 @@ export const assertIsNotOn = assertIsNotAccepted;
  * @category Parse
  */
 export function assertIsDeclined(value: unknown) {
-  assert(() => parse.isDeclined(value), `value is not considered declined: ${String(value)}`);
+  assert(() => isDeclined(value), `value is not considered declined: ${String(value)}`);
 }
 
 /**
@@ -103,7 +103,7 @@ export const assertIsOff = assertIsDeclined;
  * @category Parse
  */
 export function assertIsNotDeclined(value: unknown) {
-  assertNot(() => parse.isDeclined(value), `value is considered declined: ${String(value)}`);
+  assertNot(() => isDeclined(value), `value is considered declined: ${String(value)}`);
 }
 
 /**
@@ -129,7 +129,7 @@ export const assertIsNotOff = assertIsNotDeclined;
  * @category Parse
  */
 export function assertIsMissing(value: unknown) {
-  assert(() => parse.isMissing(value), `value is not considered missing: ${String(value)}`);
+  assert(() => isMissing(value), `value is not considered missing: ${String(value)}`);
 }
 
 /**
@@ -151,7 +151,7 @@ export const assertIsNullish = assertIsMissing;
  * @category Parse
  */
 export function assertIsNotMissing(value: unknown) {
-  assertNot(() => parse.isMissing(value), `value is considered missing: ${String(value)}`);
+  assertNot(() => isMissing(value), `value is considered missing: ${String(value)}`);
 }
 
 /**

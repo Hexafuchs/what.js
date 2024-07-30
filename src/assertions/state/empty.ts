@@ -1,4 +1,4 @@
-import * as state from '@@/src/state/index';
+import { isEmpty, isNotEmpty } from '@@/src';
 import { assert } from '@/assertions/base';
 
 /**
@@ -16,7 +16,7 @@ import { assert } from '@/assertions/base';
  * @category State
  */
 export function assertIsEmpty(object: unknown) {
-  assert(() => state.isEmpty(object), `object is not considered empty: ${String(object)}`);
+  assert(() => isEmpty(object), `object is not considered empty: ${String(object)}`);
 }
 
 /**
@@ -34,5 +34,5 @@ export function assertIsEmpty(object: unknown) {
  * @category State
  */
 export function assertIsNotEmpty(object: unknown) {
-  assert(() => state.isNotEmpty(object), `object is considered empty: ${String(object)}`);
+  assert(() => isNotEmpty(object), `object is considered empty: ${String(object)}`);
 }

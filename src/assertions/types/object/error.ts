@@ -1,4 +1,4 @@
-import * as types from '@@/src/types/index';
+import { isError, isNull } from '@@/src';
 import { assertIs, assertIsNot } from '@/assertions/base';
 
 /**
@@ -8,7 +8,7 @@ import { assertIs, assertIsNot } from '@/assertions/base';
  * @category Type
  */
 export function assertIsError(object: unknown): asserts object is Error {
-  assertIs(types.isError, object, 'error');
+  assertIs(isError, object, 'error');
 }
 
 /**
@@ -18,7 +18,7 @@ export function assertIsError(object: unknown): asserts object is Error {
  * @category Type
  */
 export function assertIsErrorOrNull(object: unknown): asserts object is Error | null {
-  assertIs(obj => types.isNull(obj) || types.isError(obj), object, 'error or null');
+  assertIs(obj => isNull(obj) || isError(obj), object, 'error or null');
 }
 
 /**
@@ -28,5 +28,5 @@ export function assertIsErrorOrNull(object: unknown): asserts object is Error | 
  * @category Type
  */
 export function assertIsNotError<T>(object: T | Error): asserts object is T {
-  assertIsNot(types.isError, object, 'error');
+  assertIsNot(isError, object, 'error');
 }

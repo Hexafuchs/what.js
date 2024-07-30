@@ -1,4 +1,4 @@
-import * as parse from '@@/src/parse/index';
+import { isNumeric } from '@@/src';
 import { assert, assertNot } from '@/assertions/base';
 
 /**
@@ -8,7 +8,7 @@ import { assert, assertNot } from '@/assertions/base';
  * @category Parse
  */
 export function assertIsNumeric(value: unknown) {
-  assert(() => parse.isNumeric(value), `value is not considered numeric: ${String(value)}`);
+  assert(() => isNumeric(value), `value is not considered numeric: ${String(value)}`);
 }
 
 /**
@@ -18,5 +18,5 @@ export function assertIsNumeric(value: unknown) {
  * @category Parse
  */
 export function assertIsNotNumeric(value: unknown) {
-  assertNot(() => parse.isNumeric(value), `value is considered numeric: ${String(value)}`);
+  assertNot(() => isNumeric(value), `value is considered numeric: ${String(value)}`);
 }

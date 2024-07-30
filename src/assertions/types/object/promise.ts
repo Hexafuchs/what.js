@@ -1,4 +1,4 @@
-import * as types from '@@/src/types/index';
+import { isPromise, isNull } from '@@/src';
 import { assertIs, assertIsNot } from '@/assertions/base';
 
 /**
@@ -8,7 +8,7 @@ import { assertIs, assertIsNot } from '@/assertions/base';
  * @category Type
  */
 export function assertIsPromise(object: unknown): asserts object is Promise<unknown> {
-  assertIs(types.isPromise, object, 'promise');
+  assertIs(isPromise, object, 'promise');
 }
 
 /**
@@ -18,7 +18,7 @@ export function assertIsPromise(object: unknown): asserts object is Promise<unkn
  * @category Type
  */
 export function assertIsPromiseOrNull(object: unknown): asserts object is Promise<unknown> | null {
-  assertIs(obj => types.isNull(obj) || types.isPromise(obj), object, 'promise or null');
+  assertIs(obj => isNull(obj) || isPromise(obj), object, 'promise or null');
 }
 
 /**
@@ -28,5 +28,5 @@ export function assertIsPromiseOrNull(object: unknown): asserts object is Promis
  * @category Type
  */
 export function assertIsNotPromise<T>(object: T | Promise<unknown>): asserts object is T {
-  assertIsNot(types.isPromise, object, 'promise');
+  assertIsNot(isPromise, object, 'promise');
 }

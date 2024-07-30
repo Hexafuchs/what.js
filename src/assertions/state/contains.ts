@@ -1,4 +1,4 @@
-import * as state from '@@/src/state/index';
+import { containsValue, containsKey } from '@@/src';
 import { assert, assertNot } from '@/assertions/base';
 
 /**
@@ -10,7 +10,7 @@ import { assert, assertNot } from '@/assertions/base';
  * @category State
  */
 export function assertContainsValue<T>(container: Array<T> | Record<string, T> | Set<T> | Map<unknown, T>, value: T) {
-  assert(() => state.containsValue(container, value), `array or object does not contain value: ${String(value)}`);
+  assert(() => containsValue(container, value), `array or object does not contain value: ${String(value)}`);
 }
 
 /**
@@ -30,7 +30,7 @@ export function assertNotContainsValue<T>(
   container: Array<T> | Record<string, T> | Set<T> | Map<unknown, T>,
   value: T
 ) {
-  assertNot(() => state.containsValue(container, value), `array or object does not contain value: ${String(value)}`);
+  assertNot(() => containsValue(container, value), `array or object does not contain value: ${String(value)}`);
 }
 
 /**
@@ -47,7 +47,7 @@ export const assertHasNotValue = assertNotContainsValue;
  * @category State
  */
 export function assertContainsKey<T>(container: Record<string, unknown> | Map<T, unknown>, key: string | T) {
-  assert(() => state.containsKey(container, key), `array or object does not contain key: ${String(key)}`);
+  assert(() => containsKey(container, key), `array or object does not contain key: ${String(key)}`);
 }
 
 /**
@@ -64,7 +64,7 @@ export const assertHasKey = assertContainsKey;
  * @category State
  */
 export function assertNotContainsKey<T>(container: Record<string, unknown> | Map<T, unknown>, key: string | T) {
-  assertNot(() => state.containsKey(container, key), `array or object does not contain key: ${String(key)}`);
+  assertNot(() => containsKey(container, key), `array or object does not contain key: ${String(key)}`);
 }
 
 /**

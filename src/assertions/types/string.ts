@@ -1,4 +1,4 @@
-import * as types from '@@/src/types/index';
+import { isString, isNull } from '@@/src';
 import { assertIs, assertIsNot } from '@/assertions/base';
 
 /**
@@ -8,7 +8,7 @@ import { assertIs, assertIsNot } from '@/assertions/base';
  * @category Type
  */
 export function assertIsString(object: unknown): asserts object is string {
-  assertIs(types.isString, object, 'string');
+  assertIs(isString, object, 'string');
 }
 
 /**
@@ -18,7 +18,7 @@ export function assertIsString(object: unknown): asserts object is string {
  * @category Type
  */
 export function assertIsStringOrNull(object: unknown): asserts object is string | null {
-  assertIs(obj => types.isNull(obj) || types.isString(obj), object, 'string or null');
+  assertIs(obj => isNull(obj) || isString(obj), object, 'string or null');
 }
 
 /**
@@ -28,5 +28,5 @@ export function assertIsStringOrNull(object: unknown): asserts object is string 
  * @category Type
  */
 export function assertIsNotString<T>(object: T | string): asserts object is T {
-  assertIsNot(types.isString, object, 'string');
+  assertIsNot(isString, object, 'string');
 }

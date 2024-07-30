@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-types */
-import * as types from '@@/src/types/index';
+import { isFunction, isNull } from '@@/src';
 import { assertIs, assertIsNot } from '@/assertions/base';
 
 /**
@@ -9,7 +9,7 @@ import { assertIs, assertIsNot } from '@/assertions/base';
  * @category Type
  */
 export function assertIsFunction(object: unknown): asserts object is Function {
-  assertIs(types.isFunction, object, 'function');
+  assertIs(isFunction, object, 'function');
 }
 
 /**
@@ -19,7 +19,7 @@ export function assertIsFunction(object: unknown): asserts object is Function {
  * @category Type
  */
 export function assertIsFunctionOrNull(object: unknown): asserts object is Function | null {
-  assertIs(obj => types.isNull(obj) || types.isFunction(obj), object, 'function or null');
+  assertIs(obj => isNull(obj) || isFunction(obj), object, 'function or null');
 }
 
 /**
@@ -29,5 +29,5 @@ export function assertIsFunctionOrNull(object: unknown): asserts object is Funct
  * @category Type
  */
 export function assertIsNotFunction<T>(object: T | Function): asserts object is T {
-  assertIsNot(types.isFunction, object, 'function');
+  assertIsNot(isFunction, object, 'function');
 }

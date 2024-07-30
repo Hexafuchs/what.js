@@ -1,4 +1,4 @@
-import * as types from '@@/src/types/index';
+import { isDate, isNull } from '@@/src';
 import { assertIs, assertIsNot } from '@/assertions/base';
 
 /**
@@ -10,7 +10,7 @@ import { assertIs, assertIsNot } from '@/assertions/base';
  * @category Type
  */
 export function assertIsDate(object: unknown): asserts object is Date {
-  assertIs(types.isDate, object, 'date');
+  assertIs(isDate, object, 'date');
 }
 
 /**
@@ -22,7 +22,7 @@ export function assertIsDate(object: unknown): asserts object is Date {
  * @category Type
  */
 export function assertIsDateOrNull(object: unknown): asserts object is Date | null {
-  assertIs(obj => types.isNull(obj) || types.isDate(obj), object, 'date or null');
+  assertIs(obj => isNull(obj) || isDate(obj), object, 'date or null');
 }
 
 /**
@@ -34,5 +34,5 @@ export function assertIsDateOrNull(object: unknown): asserts object is Date | nu
  * @category Type
  */
 export function assertIsNotDate<T>(object: T | Date): asserts object is T {
-  assertIsNot(types.isDate, object, 'date');
+  assertIsNot(isDate, object, 'date');
 }
