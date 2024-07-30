@@ -27,11 +27,15 @@ export const hasValue = containsValue;
 /**
  * Returns whether the object contains the given key.
  *
+ * Supports maps.
+ *
+ * Converts key to string before checking if it is a member of the object.
+ *
  * @group Checker
  * @category State
  */
-export const containsKey = <T>(object: Record<string, unknown> | Map<T, unknown>, value: string | T): boolean => {
-  return (isMap(object) && object.has(value as T)) || (isString(value) && value in object);
+export const containsKey = <T>(container: Record<string, unknown> | Map<T, unknown>, key: T): boolean => {
+  return (isMap(container) && container.has(key as T)) || String(key) in container;
 };
 
 /**
