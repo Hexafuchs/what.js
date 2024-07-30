@@ -23,7 +23,7 @@ const baseTests: Array<[string, Record<string, number>|Array<number>|Set<number>
 
 describe("contains value checker", () => {
   for (const test of baseTests) {
-    it("should be " + (test[2] ? 'positive' : 'negative') + " about " + test[0] + ' with values ' + test[2], () => {
+    it("should be " + (test[3] ? 'positive' : 'negative') + " about " + test[0] + ' with values ' + test[2], () => {
       expect(containsValue(test[1], test[2])).toBe(test[3]);
       expect(hasValue(test[1], test[2])).toBe(test[3]);
     });
@@ -32,7 +32,7 @@ describe("contains value checker", () => {
 
 describe("contains value assertions", () => {
   for (const test of baseTests) {
-    it("should be " + (test[2] ? 'positive' : 'negative') + " about " + test[0] + ' with values ' + test[2], () => {
+    it("should be " + (test[3] ? 'positive' : 'negative') + " about " + test[0] + ' with values ' + test[2], () => {
       if (test[3]) {
         assert.doesNotThrow(() => assertContainsValue(test[1], test[2]), AssertionError);
         assert.doesNotThrow(() => assertHasValue(test[1], test[2]), AssertionError);
