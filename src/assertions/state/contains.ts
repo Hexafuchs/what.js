@@ -22,7 +22,10 @@ export const assertHasValue = assertContainsValue;
  * @group Assertions
  * @category State
  */
-export function assertNotContainsValue<T>(container: Array<T> | Record<string, T>, value: T) {
+export function assertNotContainsValue<T>(
+  container: Array<T> | Record<string, T> | Set<T> | Map<unknown, T>,
+  value: T
+) {
   assertNot(() => state.containsValue(container, value), `array or object does not contain value: ${String(value)}`);
 }
 
