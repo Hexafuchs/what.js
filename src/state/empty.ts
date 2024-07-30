@@ -1,5 +1,5 @@
-import { isArray, isBoolean, isNumber, isObject, isString } from '@@/src';
-import { isNotPresent } from '@/state/set';
+import { isArray, isBoolean, isNumber, isObject, isString, isDate, isError, isPromise, isRegExp, isMap, isSet } from '@@/src';
+import { isNotPresent } from '@/state';
 
 /**
  * Returns whether the object is considered empty.
@@ -16,10 +16,18 @@ export const isEmpty = (object: unknown): boolean => {
   return (
     isNotPresent(object) ||
     (isBoolean(object) && !object) ||
-    (isArray(object) && object.length === 0) ||
     (isString(object) && object === '') ||
     (isNumber(object) && object === 0) ||
-    (isObject(object) && Object.keys(object).length === 0)
+    (isArray(object) && object.length === 0) ||
+    ((isSet(object) || isMap(object)) && object.size === 0) ||
+    (isObject(object) &&
+      Object.keys(object).length === 0 &&
+      !isMap(object) &&
+      !isSet(object) &&
+      !isDate(object) &&
+      !isError(object) &&
+      !isPromise(object) &&
+      !isRegExp(object))
   );
 };
 
