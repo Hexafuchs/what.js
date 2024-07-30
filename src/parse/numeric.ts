@@ -11,5 +11,9 @@ export const isNumeric = (value: unknown): boolean => {
     return false;
   }
 
+  if (value === '') {
+    return false;
+  }
+
   return !isNaN(Number(value));
 };
