@@ -5,7 +5,11 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/hexafuchs/what.js/fix-ts-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/hexafuchs/what.js/actions?query=workflow%3A"Fix+Typescript+code+style+issues"+branch%3Amain)
 [![Monthly Downloads](https://img.shields.io/npm/dm/%40hexafuchs%2Fwhat.js?style=flat-square)](hhttps://www.npmjs.com/package/@hexafuchs/what.js)
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+This package is meant to provide helpers to handle data with unknown or ambiguous types in both Javascript and
+Typescript, providing both boolean return types and Typescript assertions. It also provides some additional helpers to
+handle common use cases, like checking if a variable is "empty", has a certain function, has a special meaning, etc.
+
+## Documentation
 
 ## Installation
 
@@ -17,28 +21,13 @@ npm install @hexafuchs/what.js
 
 ## Usage
 
+Checkout the documentation at [https://hexafuchs.github.io/what.js/](https://hexafuchs.github.io/what.js/).
+
 ```typescript
 import { isNull } from "@hexafuchs/what.js";
 
 console.log(isNull(null));
 ```
-
-### Functions
-
-| Name                                 | Description                                                                                              |
-| ------------------------------------ | -------------------------------------------------------------------------------------------------------- |
-| isNull(obj)                          | Check if variable is null                                                                                |
-| isUndefined(obj)                     | Check if variable is undefined                                                                           |
-| isNumber(obj)                        | Check if variable is a number (integer or float)                                                         |
-| isString(obj)                        | Check if variable is a string                                                                            |
-| isObject(obj, includeArrays = false) | Check if variable is an object, set seconds parameter to true to include arrays. Null is never included. |
-| isArray(obj)                         | Check if variable is an array                                                                            |
-| isBoolean(obj)                       | Check if variable is a boolean                                                                           |
-| isFunction(obj)                      | Check if variable is a function                                                                          |
-| isSet(obj)                           | Check if variable is not null nor undefined                                                              |
-| isNotSet(obj)                        | Inverted version of isSet                                                                                |
-| isEmpty(obj)                         | Check if variable is null, undefined, false. zero, an empty string, an empty array, or an empty object   |
-| isNotEmpty(obj)                      | Inverted version of isEmpty                                                                              |
 
 ## Testing
 
