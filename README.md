@@ -1,8 +1,8 @@
 # A library to get information about variables
 
 [![Latest Version on NPM](https://img.shields.io/npm/v/%40hexafuchs%2Fwhat.js?style=flat-square)](https://www.npmjs.com/package/@hexafuchs/what.js)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/hexafuchs/what.js/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/hexafuchs/what.js/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/hexafuchs/what.js/fix-ts-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/hexafuchs/what.js/actions?query=workflow%3A"Fix+Typescript+code+style+issues"+branch%3Amain)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/hexafuchs/what.js/testing.yml?branch=main&label=tests&style=flat-square)](https://github.com/hexafuchs/what.js/actions?query=workflow%3A"Run+Tests"+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/hexafuchs/what.js/linting.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/hexafuchs/what.js/actions?query=workflow%3A"Run+Formatter"+branch%3Amain)
 [![Monthly Downloads](https://img.shields.io/npm/dm/%40hexafuchs%2Fwhat.js?style=flat-square)](hhttps://www.npmjs.com/package/@hexafuchs/what.js)
 
 This package is meant to provide helpers to handle data with unknown or ambiguous types in both Javascript and
