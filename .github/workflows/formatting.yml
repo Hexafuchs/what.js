@@ -3,7 +3,7 @@ name: Run Formatter
 on:
   push:
     paths:
-      - '.github/workflows/fix-ts-code-style-issues.yml'
+      - '.github/workflows/formatting.yml'
       - '**.js'
       - '**.ts'
       - '**.css'
@@ -16,7 +16,7 @@ permissions:
   contents: write
 
 jobs:
-  ts-code-styling:
+  formatting:
     runs-on: ubuntu-latest
     timeout-minutes: 8
 
@@ -43,4 +43,4 @@ jobs:
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: Fix styling
+          commit_message: ":art: Fix styling"

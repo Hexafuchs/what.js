@@ -1,16 +1,19 @@
+# Original by Spatie as MIT
+# https://github.com/spatie/package-skeleton-laravel/blob/main/.github/workflows/run-tests.yml
+
 name: Run Tests
 
 on:
   push:
     paths:
-      - '.github/workflows/run-tests.yml'
+      - '.github/workflows/testing.yml'
       - '**.js'
       - '**.ts'
       - 'package.json'
       - 'package-lock.json'
 
 jobs:
-  test:
+  testing:
     runs-on: ${{ matrix.os }}
     timeout-minutes: 5
     strategy:

@@ -1,4 +1,5 @@
-# Based on https://github.com/actions/starter-workflows/pull/2255/files
+# Original by Turadg Aleahmad licensed as MIT
+# https://github.com/actions/starter-workflows/pull/2255/files
 
 name: Deploy Documentation
 
