@@ -2,6 +2,22 @@
 
 All notable changes to `what.js` will be documented in this file.
 
+## v1.0.1 - 2024-08-08
+
+### What's Changed
+
+* Replaced dts generator
+* Replaced node:assert with own assertion error
+* Replaced `import * as` with destructuring imports
+
+#### On The Side
+
+* Updated workflows
+* Updated development packages
+* Updated configuration files
+
+**Full Changelog**: https://github.com/Hexafuchs/what.js/compare/v1.0.0...v1.0.1
+
 ## v1.0.0 - 2024-07-30
 
 ### What's Changed
