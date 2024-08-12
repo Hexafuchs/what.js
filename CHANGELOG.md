@@ -6,15 +6,15 @@ All notable changes to `what.js` will be documented in this file.
 
 ### What's Changed
 
-* Replaced dts generator
-* Replaced node:assert with own assertion error
-* Replaced `import * as` with destructuring imports
+- Replaced dts generator
+- Replaced node:assert with own assertion error
+- Replaced `import * as` with destructuring imports
 
 #### On The Side
 
-* Updated workflows
-* Updated development packages
-* Updated configuration files
+- Updated workflows
+- Updated development packages
+- Updated configuration files
 
 **Full Changelog**: https://github.com/Hexafuchs/what.js/compare/v1.0.0...v1.0.1
 
