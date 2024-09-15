@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/ban-types */
+/* eslint-disable @typescript-eslint/no-unsafe-function-type */
 import { isFunction, isNull } from '@@/src';
 import { assertIs, assertIsNot } from '@/assertions/base';
 
