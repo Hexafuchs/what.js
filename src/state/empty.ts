@@ -10,7 +10,7 @@ import {
   isPromise,
   isRegExp,
   isSet,
-  isString
+  isString,
 } from '../types';
 
 /**

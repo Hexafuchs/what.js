@@ -41,5 +41,5 @@ export default defineConfig({
     coverage: {
       exclude: ['**/vite-env.d.ts', '**/dts-bundle-generator.config.ts', '**/docs/**'],
     },
-  }
+  },
 });
