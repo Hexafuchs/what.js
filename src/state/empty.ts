@@ -1,17 +1,17 @@
+import { isNotPresent } from './present';
 import {
   isArray,
   isBoolean,
-  isNumber,
-  isObject,
-  isString,
   isDate,
   isError,
+  isMap,
+  isNumber,
+  isObject,
   isPromise,
   isRegExp,
-  isMap,
   isSet,
-} from '@@/src';
-import { isNotPresent } from '@/state';
+  isString
+} from '../types';
 
 /**
  * Returns whether the object is considered empty.

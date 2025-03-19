@@ -1,5 +1,5 @@
-import { hasFunction } from '@@/src';
-import { assert, assertNot } from '@/assertions/base';
+import { assert, assertNot } from '../base';
+import { hasFunction } from '../../state';
 
 /**
  * Asserts the object has the given function.

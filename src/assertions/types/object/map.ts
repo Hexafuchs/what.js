@@ -1,5 +1,5 @@
-import { isMap, isNull } from '@@/src';
-import { assertIs, assertIsNot } from '@/assertions/base';
+import { assertIs, assertIsNot } from '../../base';
+import { isMap, isNull } from '../../../types';
 
 /**
  * Asserts the object is a map.

@@ -1,5 +1,5 @@
-import { isPromise, isNull } from '@@/src';
-import { assertIs, assertIsNot } from '@/assertions/base';
+import { assertIs, assertIsNot } from '../../base';
+import { isNull, isPromise } from '../../../types';
 
 /**
  * Asserts the object is a promise.

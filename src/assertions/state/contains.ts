@@ -1,5 +1,5 @@
-import { containsValue, containsKey } from '@@/src';
-import { assert, assertNot } from '@/assertions/base';
+import { assert, assertNot } from '../base';
+import { containsKey, containsValue } from '../../state';
 
 /**
  * Asserts the object or array contains the given value.

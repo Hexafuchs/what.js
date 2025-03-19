@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-function-type */
-import { isFunction, isNull } from '@@/src';
-import { assertIs, assertIsNot } from '@/assertions/base';
+
+import { assertIs, assertIsNot } from '../base';
+import { isFunction, isNull } from '../../types';
 
 /**
  * Asserts the object is a function.

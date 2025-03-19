@@ -1,4 +1,4 @@
-import { isNull } from '@@/src';
+import { isNull } from '../null';
 
 /**
  * Returns whether the object is considered an object.

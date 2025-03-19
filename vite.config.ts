@@ -41,11 +41,5 @@ export default defineConfig({
     coverage: {
       exclude: ['**/vite-env.d.ts', '**/dts-bundle-generator.config.ts', '**/docs/**'],
     },
-  },
-  resolve: {
-    alias: [
-      { find: '@', replacement: path.resolve(__dirname, 'src') },
-      { find: '@@', replacement: path.resolve(__dirname) },
-    ],
-  },
+  }
 });

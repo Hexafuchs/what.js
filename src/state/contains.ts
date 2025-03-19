@@ -1,4 +1,4 @@
-import { isArray, isObject, isSet, isMap } from '@@/src';
+import { isArray, isMap, isObject, isSet } from '../types';
 
 /**
  * Returns whether the object or array contains the given value.

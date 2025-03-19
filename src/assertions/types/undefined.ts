@@ -1,5 +1,5 @@
-import { isUndefined } from '@@/src';
-import { assertIs, assertIsNot } from '@/assertions/base';
+import { assertIs, assertIsNot } from '../base';
+import { isUndefined } from '../../types';
 
 /**
  * Asserts the object is undefined.

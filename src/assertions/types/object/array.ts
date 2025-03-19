@@ -1,5 +1,5 @@
-import { isArray, isNull } from '@@/src';
-import { assertIs, assertIsNot } from '@/assertions/base';
+import { assertIs, assertIsNot } from '../../base';
+import { isArray, isNull } from '../../../types';
 
 /**
  * Asserts the object is an array.

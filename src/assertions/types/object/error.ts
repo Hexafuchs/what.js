@@ -1,5 +1,5 @@
-import { isError, isNull } from '@@/src';
-import { assertIs, assertIsNot } from '@/assertions/base';
+import { assertIs, assertIsNot } from '../../base';
+import { isError, isNull } from '../../../types';
 
 /**
  * Asserts the object is an error.

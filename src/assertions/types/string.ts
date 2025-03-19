@@ -1,5 +1,5 @@
-import { isString, isNull } from '@@/src';
-import { assertIs, assertIsNot } from '@/assertions/base';
+import { assertIs, assertIsNot } from '../base';
+import { isNull, isString } from '../../types';
 
 /**
  * Asserts the object is a string.

@@ -1,5 +1,5 @@
-import { isNotPresent, isPresent } from '@@/src';
-import { assert } from '@/assertions/base';
+import { assert } from '../base';
+import { isNotPresent, isPresent } from '../../state';
 
 /**
  * Asserts the object is not null or undefined.

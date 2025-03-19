@@ -1,5 +1,5 @@
-import { assert, assertNot } from '@/assertions/base';
-import { isAccepted, isDeclined, isMissing } from '@@/src';
+import { assert, assertNot } from '../base';
+import { isAccepted, isDeclined, isMissing } from '../../parse';
 
 /**
  * Asserts the value is a value that expresses acceptance.

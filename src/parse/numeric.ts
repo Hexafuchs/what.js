@@ -1,4 +1,4 @@
-import { isNumericPrimitive, isString } from '@@/src';
+import { isNumericPrimitive, isString } from '../types';
 
 /**
  * Returns if the value is numeric (either a number, bigint or a string that represents a number).

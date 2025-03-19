@@ -1,5 +1,5 @@
-import { isNumeric } from '@@/src';
-import { assert, assertNot } from '@/assertions/base';
+import { isNumeric } from '../../parse';
+import { assert, assertNot } from '../base';
 
 /**
  * Asserts the value is numeric (either a number, bigint or a string that represents a number).

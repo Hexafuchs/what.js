@@ -1,5 +1,5 @@
-import { isRegExp, isNull } from '@@/src';
-import { assertIs, assertIsNot } from '@/assertions/base';
+import { assertIs, assertIsNot } from '../../base';
+import { isNull, isRegExp } from '../../../types';
 
 /**
  * Asserts the object is a regexp.

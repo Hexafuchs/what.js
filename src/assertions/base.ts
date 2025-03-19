@@ -1,4 +1,4 @@
-import { AssertionError } from '@@/src';
+import { AssertionError } from '../errors';
 
 /**
  * @internal

@@ -1,5 +1,5 @@
-import { isNumber, isNumericPrimitive, isBigInt, isNull } from '@@/src';
-import { assertIs, assertIsNot } from '@/assertions/base';
+import { assertIs, assertIsNot } from '../base';
+import { isBigInt, isNull, isNumber, isNumericPrimitive } from '../../types';
 
 /**
  * Asserts the object is a number.

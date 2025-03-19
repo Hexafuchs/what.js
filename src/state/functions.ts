@@ -1,4 +1,5 @@
-import { isDefined, isFunction } from '@@/src';
+import { isDefined } from './present';
+import { isFunction } from '../types';
 
 /**
  * Returns if the object has the given function.

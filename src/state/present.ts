@@ -1,4 +1,4 @@
-import { isNull, isUndefined } from '@@/src';
+import { isNull, isUndefined } from '../types';
 
 /**
  * Returns whether the object is a neither null nor undefined.

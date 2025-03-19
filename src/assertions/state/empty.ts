@@ -1,5 +1,5 @@
-import { isEmpty, isNotEmpty } from '@@/src';
-import { assert } from '@/assertions/base';
+import { assert } from '../base';
+import { isEmpty, isNotEmpty } from '../../state';
 
 /**
  * Asserts the object is considered empty.
