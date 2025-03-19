@@ -2,6 +2,15 @@
 
 All notable changes to `what.js` will be documented in this file.
 
+## v1.0.2 - 2025-03-19
+
+### What's Changed
+
++ Updated dependencies
++ Removed non-relative paths
+
+**Full Changelog**: https://github.com/Hexafuchs/what.js/compare/v1.0.1...v1.0.2
+
 ## v1.0.1 - 2024-08-08
 
 ### What's Changed
