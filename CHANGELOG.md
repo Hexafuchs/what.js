@@ -6,8 +6,8 @@ All notable changes to `what.js` will be documented in this file.
 
 ### What's Changed
 
-+ Updated dependencies
-+ Removed non-relative paths
+- Updated dependencies
+- Removed non-relative paths
 
 **Full Changelog**: https://github.com/Hexafuchs/what.js/compare/v1.0.1...v1.0.2
 
