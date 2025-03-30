@@ -1,7 +1,7 @@
 import { describe } from 'vitest';
-import { testAssertIs, testAssertIsNot, testAssertIsOrNull } from '../../helper/assertions';
+// @ts-ignore
+import { testIs, testAssertIs, testAssertIsNot, testAssertIsOrNull } from '../../helper';
 import { isPromise, assertIsNotPromise, assertIsPromise, assertIsPromiseOrNull } from '../../../src';
-import { testIs } from '../../helper/checker';
 
 const baseTests: Array<[string, unknown, boolean]> = [
   ["null", null, false],

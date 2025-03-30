@@ -4,8 +4,8 @@ import {
   assertIsNotNumeric,
   isNumeric
 } from "../../src";
-import { testIs } from '../helper/checker';
-import { testAssertIs, testAssertIsNot } from '../helper/assertions';
+// @ts-ignore
+import { testIs, testAssertIs, testAssertIsNot } from '../helper';
 
 const baseTests: Array<[string, unknown, boolean]> = [
   ["zero (string)", "0", true],

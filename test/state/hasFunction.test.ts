@@ -2,11 +2,8 @@ import { describe } from "vitest";
 import {
   assertHasNotFunction, assertHasFunction, hasFunction, assertDoesNotHaveFunction
 } from "../../src";
-import { testHas } from '../helper/checker';
-import {
-  testAssertHas,
-  testAssertHasNot,
-} from '../helper/assertions';
+// @ts-ignore
+import { testHas, testAssertHas, testAssertHasNot } from '../helper';
 
 const baseTests: Array<[string, unknown, string, boolean]> = [
   ["null", null, "toString", false],

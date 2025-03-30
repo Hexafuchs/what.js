@@ -4,8 +4,8 @@ import {
   isNotPresent,
   assertIsPresent, assertIsNotPresent
 } from "../../src";
-import { testIs, testIsNot } from '../helper/checker';
-import { testAssertIs, testAssertIsNot } from '../helper/assertions';
+// @ts-ignore
+import { testIs, testIsNot, testAssertIs, testAssertIsNot } from '../helper';
 
 const baseTests: Array<[string, unknown, boolean]> = [
   ["null", null, false],

@@ -1,7 +1,7 @@
 import { describe } from "vitest";
 import { assertIsNotNull, assertIsNull, isNull } from "../../src";
-import { testIs } from '../helper/checker';
-import { testAssertIs, testAssertIsNot } from '../helper/assertions';
+// @ts-ignore
+import { testIs, testAssertIs, testAssertIsNot } from '../helper';
 
 const baseTests: Array<[string, unknown, boolean]> = [
   ["null", null, true],

@@ -8,8 +8,8 @@ import {
   isBigInt,
   isNumber, isNumericPrimitive
 } from "../../src";
-import { testIs } from '../helper/checker';
-import { testAssertIs, testAssertIsNot, testAssertIsOrNull } from '../helper/assertions';
+// @ts-ignore
+import { testIs, testAssertIs, testAssertIsNot, testAssertIsOrNull } from '../helper';
 
 const numberTests: Array<[string, unknown, boolean]> = [
   ["undefined", undefined, false],
