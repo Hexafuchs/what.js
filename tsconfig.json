@@ -1,6 +1,10 @@
 {
   "compilerOptions": {
-    "rootDir": ".",
+    "rootDir": "src",
+    "outDir": "build",
+    "noEmit": false,
+    "declaration": true,
+    "declarationMap": true,
     "target": "ESNext",
     "useDefineForClassFields": true,
     "module": "ESNext",
@@ -10,13 +14,24 @@
     "sourceMap": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "noEmit": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "forceConsistentCasingInFileNames": true,
-    "types": ["vite/client", "node", "vitest/globals"]
+    "listEmittedFiles": true,
+    "types": ["node"]
   },
-  "include": ["src"],
-  "exclude": ["**/*.test.ts", "node_modules", "test/**", ".history/**"]
+  "exclude": [
+    "build/**",
+    "**/*.test.ts",
+    "node_modules",
+    "test/**",
+  ],
+  "tsc-alias": {
+    "resolveFullPaths": true,
+    "fileExtensions": {
+      "inputGlob": "{js,jsx,mjs}",
+      "outputCheck": ["js", "json", "jsx", "mjs"]
+    }
+  }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@hexafuchs/what.js",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "homepage": "https://github.com/Hexafuchs/what.js",
   "contributors": [
     {
@@ -16,32 +16,21 @@
     "url": "https://github.com/Hexafuchs/what.js/issues"
   },
   "license": "MIT",
+  "files": [
+    "build"
+  ],
   "type": "module",
-  "main": "./dist/what.cjs",
-  "module": "./dist/what.mjs",
-  "exports": {
-    ".": {
-      "require": "./dist/what.cjs",
-      "import": "./dist/what.mjs"
-    },
-    "./dist/": {
-      "import": "./dist/",
-      "require": "./dist/"
-    }
-  },
-  "types": "./dist/index.d.ts",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
   "scripts": {
-    "dev": "vite --host",
-    "build": "rimraf --glob build/**/* && tsc && vite build && copyfiles ./package.json build",
+    "build": "rimraf --glob build/**/* && tsc && tsc-alias",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest --coverage",
-    "lint:scripts": "ESLINT_USE_FLAT_CONFIG=false eslint . --ext .ts,.js",
-    "lint:styles": "stylelint ./**/*.{css,scss,sass}",
-    "format:scripts": "prettier . --write",
-    "format:styles": "stylelint ./**/*.{css,scss,sass} --fix --aei",
-    "format": "npm run format:scripts && npm run format:styles",
-    "docs": "typedoc"
+    "lint": "ESLINT_USE_FLAT_CONFIG=false eslint . --ext .ts,.js",
+    "format": "prettier . --write",
+    "docs": "typedoc",
+    "publish:locally": "npm config set ~/.prefix && npm link"
   },
   "devDependencies": {
     "@types/jsdom": "^21.1.7",
@@ -53,22 +42,12 @@
     "eslint": "^9.22.0",
     "eslint-config-prettier": "^10.1.1",
     "eslint-plugin-prettier": "^5.2.3",
-    "lint-staged": "^15.5.0",
-    "postcss": "^8.5.3",
-    "postcss-sass": "^0.5.0",
-    "postcss-scss": "^4.0.9",
     "prettier": "^3.5.3",
     "rimraf": "^6.0.1",
-    "stylelint": "^16.16.0",
-    "stylelint-config-recommended": "^15.0.0",
-    "stylelint-config-sass-guidelines": "^12.1.0",
-    "stylelint-order": "^6.0.4",
-    "stylelint-prettier": "^5.0.3",
     "ts-node": "^10.9.2",
+    "tsc-alias": "^1.8.11",
     "typedoc": "^0.28.0",
     "typescript": "^5.8.2",
-    "vite": "^6.2.2",
-    "vite-plugin-dts": "^4.5.3",
     "vitest": "^3.0.9"
   }
 }
