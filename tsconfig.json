@@ -21,12 +21,7 @@
     "listEmittedFiles": true,
     "types": ["node"]
   },
-  "exclude": [
-    "build/**",
-    "**/*.test.ts",
-    "node_modules",
-    "test/**",
-  ],
+  "exclude": ["build/**", "**/*.test.ts", "node_modules", "test/**"],
   "tsc-alias": {
     "resolveFullPaths": true,
     "fileExtensions": {
