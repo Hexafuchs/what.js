@@ -35,10 +35,7 @@ jobs:
         run: npm ci
 
       - name: Format scripts
-        run: npm run format:scripts
-
-      - name: Format styles
-        run: npm run format:styles
+        run: npm run format
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v5

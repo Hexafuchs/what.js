@@ -26,4 +26,4 @@ jobs:
         run: npm ci
 
       - name: Eslint
-        run: npm run lint:scripts
+        run: npm run lint
