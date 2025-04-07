@@ -6,10 +6,9 @@ All notable changes to `what.js` will be documented in this file.
 
 ### Migration
 
-+ Support for cjs and iief has been dropped for now.
-  + If you are interested in re-adding it, feel free to get in contact.
-  
-+ Please check your import paths. While no features were added or removed, some paths are not up to date anymore, especially anything containing 'src'
+- Support for cjs and iief has been dropped for now.
+  - If you are interested in re-adding it, feel free to get in contact.
+- Please check your import paths. While no features were added or removed, some paths are not up to date anymore, especially anything containing 'src'
 
 **Full Changelog**: https://github.com/Hexafuchs/what.js/compare/v1.0.2...v2.0.0
 
