@@ -1,3 +1,5 @@
+# Moved to https://codeberg.org/Hexafuchs/what.js
+
 # A library to get information about variables
 
 [![Latest Version on NPM](https://img.shields.io/npm/v/%40hexafuchs%2Fwhat.js?style=flat-square)](https://www.npmjs.com/package/@hexafuchs/what.js)
